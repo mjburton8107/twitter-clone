@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+$(".tweet-actions").hide();
+$(".stats").hide();
+
 $("#tweet-submit").css('display', 'none');
 $("#char-count").css('display', 'none');
 
@@ -8,6 +11,8 @@ $("#tweet-content").on("click", function(){
   $("#tweet-submit").show();
   $("#char-count").show();
 })
+
+
 
 $(".tweet-compose").keydown(function(){
   var charsLeft = 140 - $(".tweet-compose").val().length;
@@ -41,8 +46,27 @@ $("#tweet-submit").on("click", function(){
   newElm.find('#first-responder-picture').hide();
   newElm.find('#first-responder-picture').hide();
   newElm.find('#second-responder-picture').hide();
+  newElm.find("#first-tweet-placeholder").attr("placeholder",'Reply to @ShiaLB');
   target.prepend(newElm);
 });
+
+  $(".tweet").hover(function () {
+    $(this).find(".tweet-actions").toggle('fast');
+  });
+
+
+  $(".tweet").on('click', function(){
+    $(this).find(".stats").show();
+  })
+
+  $(".tweet").mouseleave(function(){
+    $(this).find(".stats").hide();
+  })
+
+
+
+
+
 
   // var newTweet = $("#first-tweet").clone(false).prependTo("#stream");
   // $("#first-avatar").css("<img src=img/alagoon.jpg />")
