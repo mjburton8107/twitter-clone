@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  $("time.timeago").timeago();
+
 $(".tweet-actions").hide();
 $(".stats").hide();
 
@@ -40,12 +42,12 @@ $("#tweet-submit").on("click", function(){
   newElm.find("#first-tweet-name").html("Shia Lebouf");
   newElm.find("#first-tweet-username").html("@ShiaLB");
   newElm.find('#first-tweet-text').html(userInput);
-  newElm.find('#first-time').html('1:30 PM - 19 Sep 13');
   newElm.find('#first-num-favorites').html('0');
   newElm.find('#first-num-retweets').html('0');
   newElm.find('#first-responder-picture').hide();
   newElm.find('#first-responder-picture').hide();
   newElm.find('#second-responder-picture').hide();
+  //newElm.find(".timeago").timeago(new Date());
   newElm.find("#first-tweet-placeholder").attr("placeholder",'Reply to @ShiaLB');
   target.prepend(newElm);
 });
