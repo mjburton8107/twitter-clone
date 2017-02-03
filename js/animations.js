@@ -27,7 +27,32 @@ $(".tweet-compose").keydown(function(){
 
 $("#tweet-submit").on("click", function(){
   var userInput = $(".tweet-compose").val()
-  $("#stream").prepend(userInput);
-})
+  var clone = $("#first-tweet");
+  var target = $("#stream");
 
-})
+  var newElm = clone.clone(true);
+  newElm.find("#first-avatar").attr("src",'img/alagoon.jpg');
+  newElm.find("#first-tweet-name").html("Shia Lebouf");
+  newElm.find("#first-tweet-username").html("@ShiaLB");
+  newElm.find('#first-tweet-text').html(userInput);
+  newElm.find('#first-time').html('1:30 PM - 19 Sep 13');
+  newElm.find('#first-num-favorites').html('0');
+  newElm.find('#first-num-retweets').html('0');
+  newElm.find('#first-responder-picture').hide();
+  newElm.find('#first-responder-picture').hide();
+  newElm.find('#second-responder-picture').hide();
+  target.prepend(newElm);
+});
+
+  // var newTweet = $("#first-tweet").clone(false).prependTo("#stream");
+  // $("#first-avatar").css("<img src=img/alagoon.jpg />")
+
+  /*function(){
+    $("#first-avatar").css("<img src=img/alagoon.jpg />")
+    $("#first-tweet-name").html("Shia Lebouf");
+    $("#first-tweet-username").html("@ShiaLB");
+    $("first-tweet-text").html(userInput);
+  });
+  $(newTweet).prependTo("#stream");*/
+
+});
