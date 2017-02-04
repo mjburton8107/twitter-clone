@@ -4,6 +4,9 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
+jQuery("time.timeago").timeago();
+jQuery.timeago.settings.allowFuture = true;
+
 
 $(".tweet-actions").hide();
 $(".stats").hide();
@@ -11,11 +14,16 @@ $(".stats").hide();
 $("#tweet-submit").css('display', 'none');
 $("#char-count").css('display', 'none');
 
-$("#tweet-content").on("click", function(){
-  $("#user-tweet-compose").css("height", "5.5em");
+$("#user-tweet-compose").on("click", function(){
+  $(this).addClass("tweet-compose-2x");
   $("#tweet-submit").show();
   $("#char-count").show();
+  $("#tweet-submit").on('click', function(){
+    $("#user-tweet-compose").removeClass("tweet-compose-2x");
+    $("#user-tweet-compose").val("");
+  })
 })
+
 
 
 
@@ -50,7 +58,7 @@ $("#tweet-submit").on("click", function(){
   var clone = $("#first-tweet");
   var target = $("#stream");
   var imageUrl = $('#profile-summary img').attr('src');
-  console.log(imageUrl)
+  var newDate = jQuery.timeago(new Date());
 
 
   var newElm = clone.clone(true);
@@ -63,7 +71,7 @@ $("#tweet-submit").on("click", function(){
   newElm.find('#first-responder-picture').hide();
   newElm.find('#first-responder-picture').hide();
   newElm.find('#second-responder-picture').hide();
-  newElm.find('#first-time').html("Just now")
+  newElm.find('#first-time').html(newDate)
   newElm.find("#first-tweet-placeholder").attr("placeholder",'Reply to @ShiaLB');
   target.prepend(newElm);
 });
