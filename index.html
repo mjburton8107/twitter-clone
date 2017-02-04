@@ -7,11 +7,12 @@
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
 	</head>
 	<body>
+
 		<div id="page-container">
 			<div id="dashboard">
 				<div id="profile-summary">
 					<div class="content">
-						<img class='avatar' src='img/alagoon.jpg' />
+						<img class='avatar' data-toggle="tooltip" data-placement="right" data-html="true" title='<img src="img/alagoon.jpg" />' src='img/alagoon.jpg' />
 						<p id="user-name">Shia Lebouf</p>
 					</div>
 				</div>
@@ -42,8 +43,9 @@
 					<!-- STEP 5: When the user successfully inputs characters and clicks the “Tweet” button, a new tweet should be created and added to the tweet stream in the main column, using the user’s fake profile image in the top left and username/fullname. -->
 					<!-- HINT: jQuery ".prepend" method -->
 					<div id="first-tweet" class="tweet">
+						<!--<div id="first-tooltip" class="shouldHide tooltip">asdgasdlgkjalsdkgjalskdgjlaksdgjlkjlkjlakjsdg</div>-->
 						<div class="content">
-							<img id="first-avatar" class="avatar" src="img/damenleeturks.jpg" />
+							<img id="first-avatar" class="avatar" data-toggle="tooltip" data-placement="right" data-html="true" title='<img src="img/damenleeturks.jpg" />' src="img/damenleeturks.jpg" />
 							<strong id="first-tweet-name" class="fullname">My BFF</strong>
 							<span id="first-tweet-username" class="username">@mybff</span>
 
@@ -85,12 +87,12 @@
 
 								<!-- BLACK DIAMOND: Make the timestamp below similar to how they look on Twitter (1h, 18m, 1m) and use the jQuery timeago plugin to make them automatic. -->
 								<!-- HINT: Refer to timeago documentation -->
-								<div id="first-time" class="time">
+								<div id="first-time" class="timeago">
 									1:04 PM - 19 Sep 13
 								</div>
 							</div>
 							<div class="reply">
-								<img class="avatar" src="img/alagoon.jpg" />
+								<img class="avatar" data-toggle="tooltip" data-placement="right" data-html="true" title='<img src="img/alagoon.jpg" />' src="img/alagoon.jpg" />
 								<textarea id="first-tweet-placeholder" class="tweet-compose" placeholder="Reply to @mybff"/></textarea>
 							</div>
 						</div>
@@ -98,7 +100,7 @@
 
 					<div class="tweet">
 						<div class="content">
-							<img class="avatar" src="img/funwatercat.jpg" />
+							<img class="avatar" data-toggle="tooltip" data-placement="right" data-html="true" title='<img src="img/funwatercat.jpg" />' src="img/funwatercat.jpg" />
 							<strong class="fullname">The Onion</strong>
 							<span class="username">@theonion</span>
 							<p class="tweet-text">“I'm able to speak confidently about a wide range of subjects, so it’s probably hard for most women to follow.” http://onion.com/1aWfKwf </p>
@@ -130,7 +132,7 @@
 								</div>
 							</div>
 							<div class="reply">
-								<img class="avatar" src="img/alagoon.jpg" />
+								<img class="avatar" data-toggle="tooltip" data-placement="right" data-html="true" title='<img src="img/alagoon.jpg" />' src="img/alagoon.jpg" />
 								<textarea id="tweet-responder" class="tweet-compose" placeholder="Reply to @theonion"/></textarea>
 							</div>
 						</div>
@@ -138,7 +140,7 @@
 
 					<div class="tweet">
 						<div class="content">
-							<img class="avatar" src="img/jennyshen.jpg" />
+							<img class="avatar" data-toggle="tooltip" data-placement="right" data-html="true" title='<img src="img/jennyshen.jpg" />' src="img/jennyshen.jpg" />
 							<strong class="fullname">Harvard Biz Review</strong>
 							<span class="username">@HarvardBiz</span>
 							<p class="tweet-text">It is possible to work with a loved one without ruining the relationship http://s.hbr.org/15FDIri </p>
@@ -170,7 +172,7 @@
 								</div>
 							</div>
 							<div class="reply">
-								<img class="avatar" src="img/alagoon.jpg" />
+								<img class="avatar" data-toggle="tooltip" data-placement="right" data-html="true" title='<img src="img/alagoon.jpg" />' src="img/alagoon.jpg" />
 								<textarea id="tweet-responder" class="tweet-compose" placeholder="Reply to @HarvardBiz"/></textarea>
 							</div>
 						</div>
@@ -179,9 +181,12 @@
 			</div><!-- #main -->
 		</div><!-- #page-container -->
 		<script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
-		<script type="text/javascript" src="./js/timestamp.js">
-
-		</script>
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="./js/timestamp.js"></script>
+		<script type="text/javascript" src="./js/tether.min.js"></script>
 		<script type="text/javascript" src="./js/animations.js"></script>
 	</body>
 </html>

@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
-  $("time.timeago").timeago();
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 
 $(".tweet-actions").hide();
 $(".stats").hide();
@@ -16,7 +19,7 @@ $("#tweet-content").on("click", function(){
 
 
 
-$(".tweet-compose").keydown(function(){
+$(".tweet-compose").keyup(function(){
   var charsLeft = 140 - $(".tweet-compose").val().length;
   $("#char-count").html(charsLeft)
   if(charsLeft <= 10){
@@ -32,13 +35,26 @@ $(".tweet-compose").keydown(function(){
       }
   });
 
+// $('.tweet').on('mouseover', function() {
+//   $(this).find('.tooltip').removeClass('shouldHide')
+// })
+//
+// $('.tweet').on('mouseleave', function() {
+//   $(this).find('.tooltip').addClass('shouldHide')
+// })
+
+
+
 $("#tweet-submit").on("click", function(){
   var userInput = $(".tweet-compose").val()
   var clone = $("#first-tweet");
   var target = $("#stream");
+  var imageUrl = $('#profile-summary img').attr('src');
+  console.log(imageUrl)
+
 
   var newElm = clone.clone(true);
-  newElm.find("#first-avatar").attr("src",'img/alagoon.jpg');
+  newElm.find("#first-avatar").attr("src",imageUrl);
   newElm.find("#first-tweet-name").html("Shia Lebouf");
   newElm.find("#first-tweet-username").html("@ShiaLB");
   newElm.find('#first-tweet-text').html(userInput);
@@ -47,7 +63,7 @@ $("#tweet-submit").on("click", function(){
   newElm.find('#first-responder-picture').hide();
   newElm.find('#first-responder-picture').hide();
   newElm.find('#second-responder-picture').hide();
-  //newElm.find(".timeago").timeago(new Date());
+  newElm.find('#first-time').html("Just now")
   newElm.find("#first-tweet-placeholder").attr("placeholder",'Reply to @ShiaLB');
   target.prepend(newElm);
 });
