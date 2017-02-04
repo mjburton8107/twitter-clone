@@ -15,12 +15,15 @@ $("#tweet-submit").css('display', 'none');
 $("#char-count").css('display', 'none');
 
 $("#user-tweet-compose").on("click", function(){
+  $("#char-count").html(140)
   $(this).addClass("tweet-compose-2x");
   $("#tweet-submit").show();
   $("#char-count").show();
   $("#tweet-submit").on('click', function(){
     $("#user-tweet-compose").removeClass("tweet-compose-2x");
     $("#user-tweet-compose").val("");
+    $("#tweet-submit").hide();
+    $("#char-count").hide();
   })
 })
 
@@ -77,7 +80,7 @@ $("#tweet-submit").on("click", function(){
 });
 
   $(".tweet").hover(function () {
-    $(this).find(".tweet-actions").toggle('fast');
+    $(this).find(".tweet-actions").toggle('slow');
   });
 
 
@@ -88,7 +91,6 @@ $("#tweet-submit").on("click", function(){
   $(".tweet").mouseleave(function(){
     $(this).find(".stats").hide();
   })
-
 
 
 
